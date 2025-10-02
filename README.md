@@ -17,7 +17,7 @@ A blockchain indexer built with Envio that processes property data events from s
 - [Docker desktop](https://www.docker.com/products/docker-desktop/)
 - Git
 
-## Getting Started
+## Getting Started 
 
 ### 1. Create Envio Account
 
