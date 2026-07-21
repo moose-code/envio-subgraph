@@ -368,6 +368,7 @@ export const getRelationshipData = createEffect(
         input: S.string,
         output: relationshipSchema,
         cache: true,
+        rateLimit: false,
     },
     async ({ input: cid, context }) => {
         return fetchDataWithInfiniteRetry(
@@ -387,6 +388,7 @@ export const getAddressData = createEffect(
         input: S.string,
         output: addressSchema,
         cache: true,
+        rateLimit: false,
     },
     async ({ input: cid, context }) => {
         return fetchDataWithInfiniteRetry(
@@ -429,6 +431,7 @@ export const getPropertyData = createEffect(
         input: S.string,
         output: propertySchema,
         cache: true,
+        rateLimit: false,
     },
     async ({ input: cid, context }) => {
         return fetchDataWithInfiniteRetry(
@@ -461,7 +464,8 @@ export const getIpfsMetadata = createEffect(
         name: "getIpfsMetadata",
         input: S.string,
         output: ipfsMetadataSchema,
-        cache: true, // Enable caching for better performance
+        cache: true, // Enable caching for better performance,
+        rateLimit: false,
     },
     async ({ input: cid, context }) => {
         return fetchIpfsMetadataWithInfiniteRetry(context, cid);
