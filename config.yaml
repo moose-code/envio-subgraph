@@ -1,13 +1,14 @@
 # yaml-language-server: $schema=./node_modules/envio/evm.schema.json
 name: envio-graph2
+contracts:
+  - name: ERC1967Proxy
+    handler: src/EventHandlers.ts
+    events:
+      - event: DataGroupHeartBeat(bytes32 indexed propertyHash, bytes32 indexed dataGroupHash, bytes32 indexed dataHash, address submitter)
+      - event: DataSubmitted(bytes32 indexed propertyHash, bytes32 indexed dataGroupHash, address indexed submitter, bytes32 dataHash)
 chains:
   - id: 137
     start_block: ${ENVIO_START_BLOCK}
     contracts:
       - name: ERC1967Proxy
-        address:
-          - ${ENVIO_CONTRACT_ADDRESS}
-        handler: src/EventHandlers.ts
-        events:
-          - event: DataGroupHeartBeat(bytes32 indexed propertyHash, bytes32 indexed dataGroupHash, bytes32 indexed dataHash, address submitter)
-          - event: DataSubmitted(bytes32 indexed propertyHash, bytes32 indexed dataGroupHash, address indexed submitter, bytes32 dataHash)
+        address: "${ENVIO_CONTRACT_ADDRESS}"
