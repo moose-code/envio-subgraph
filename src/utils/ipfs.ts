@@ -362,6 +362,7 @@ export const getRelationshipData = createEffect(
         input: S.string,
         output: relationshipSchema,
         cache: true,
+        rateLimit: false,
     },
     async ({ input: cid, context }) => {
         return fetchDataWithInfiniteRetry(
@@ -381,6 +382,7 @@ export const getStructureData = createEffect(
         input: S.string,
         output: structureSchema,
         cache: true,
+        rateLimit: false,
     },
     async ({ input: cid, context }) => {
         return fetchDataWithInfiniteRetry(
@@ -447,6 +449,7 @@ export const getAddressData = createEffect(
         input: S.string,
         output: addressSchema,
         cache: true,
+        rateLimit: false,
     },
     async ({ input: cid, context }) => {
         return fetchDataWithInfiniteRetry(
@@ -489,6 +492,7 @@ export const getPropertyData = createEffect(
         input: S.string,
         output: propertySchema,
         cache: true,
+        rateLimit: false,
     },
     async ({ input: cid, context }) => {
         return fetchDataWithInfiniteRetry(
@@ -523,6 +527,7 @@ export const getIpfsFactSheetData = createEffect(
         input: S.string,
         output: ipfsFactSheetSchema,
         cache: true,
+        rateLimit: false,
     },
     async ({ input: cid, context }) => {
         return fetchDataWithInfiniteRetry(
@@ -543,7 +548,8 @@ export const getIpfsMetadata = createEffect(
         name: "getIpfsMetadata",
         input: S.string,
         output: ipfsMetadataSchema,
-        cache: true, // Enable caching for better performance
+        cache: true, // Enable caching for better performance,
+        rateLimit: false,
     },
     async ({ input: cid, context }) => {
         return fetchIpfsMetadataWithInfiniteRetry(context, cid);
@@ -556,6 +562,7 @@ export const getLotData = createEffect(
         input: S.string,
         output: lotDataSchema,
         cache: true,
+        rateLimit: false,
     },
     async ({ input: cid, context }) => {
         return fetchDataWithInfiniteRetry(
@@ -589,6 +596,7 @@ export const getSalesHistoryData = createEffect(
         input: S.string,
         output: salesHistorySchema,
         cache: true,
+        rateLimit: false,
     },
     async ({ input: cid, context }) => {
         return fetchDataWithInfiniteRetry(
@@ -612,6 +620,7 @@ export const getTaxData = createEffect(
         input: S.string,
         output: taxSchema,
         cache: true,
+        rateLimit: false,
     },
     async ({ input: cid, context }) => {
         return fetchDataWithInfiniteRetry(
@@ -644,6 +653,7 @@ export const getUtilityData = createEffect(
         input: S.string,
         output: utilitySchema,
         cache: true,
+        rateLimit: false,
     },
     async ({ input: cid, context }) => {
         return fetchDataWithInfiniteRetry(
@@ -683,6 +693,7 @@ export const getFloodStormData = createEffect(
         input: S.string,
         output: floodStormInformationSchema,
         cache: true,
+        rateLimit: false,
     },
     async ({ input: cid, context }) => {
         return fetchDataWithInfiniteRetry(
@@ -711,6 +722,7 @@ export const getPersonData = createEffect(
         input: S.string,
         output: personSchema,
         cache: true,
+        rateLimit: false,
     },
     async ({ input: cid, context }) => {
         return fetchDataWithInfiniteRetry(
@@ -739,6 +751,7 @@ export const getCompanyData = createEffect(
         input: S.string,
         output: companySchema,
         cache: true,
+        rateLimit: false,
     },
     async ({ input: cid, context }) => {
         return fetchDataWithInfiniteRetry(
@@ -767,6 +780,7 @@ export const getCommunicationData = createEffect(
         input: S.string,
         output: communicationSchema,
         cache: true,
+        rateLimit: false,
     },
     async ({ input: cid, context }) => {
         return fetchDataWithInfiniteRetry(
@@ -788,6 +802,7 @@ export const getLayoutData = createEffect(
         input: S.string,
         output: layoutSchema,
         cache: true,
+        rateLimit: false,
     },
     async ({ input: cid, context }) => {
         return fetchDataWithInfiniteRetry(
@@ -840,6 +855,7 @@ export const getFileData = createEffect(
         input: S.string,
         output: fileSchema,
         cache: true,
+        rateLimit: false,
     },
     async ({ input: cid, context }) => {
         return fetchDataWithInfiniteRetry(
@@ -865,6 +881,7 @@ export const getDeedData = createEffect(
         input: S.string,
         output: deedSchema,
         cache: true,
+        rateLimit: false,
     },
     async ({ input: cid, context }) => {
         return fetchDataWithInfiniteRetry(
@@ -886,6 +903,7 @@ export const getPropertyImprovementData = createEffect(
         input: S.string,
         output: propertyImprovementSchema,
         cache: true,
+        rateLimit: false,
     },
     async ({ input: cid, context }) => {
         return fetchDataWithInfiniteRetry(
