@@ -1,22 +1,4 @@
-import {
-  DataSubmittedWithLabel,
-  Structure,
-  Address,
-  Property,
-  Ipfs,
-  Lot,
-  SalesHistory,
-  Tax,
-  Utility,
-  FloodStormInformation,
-  Person,
-  Company,
-  Layout,
-  File,
-  Deed,
-  PropertyImprovement,
-  Communication,
-} from "generated";
+import { Structure, Address, Property, Ipfs, Lot, SalesHistory, Tax, Utility, FloodStormInformation, Person, Company, Layout, File, Deed, PropertyImprovement, Communication } from "envio";
 import { bytes32ToCID, getIpfsMetadata, getRelationshipData, getStructureData, getAddressData, getPropertyData, getIpfsFactSheetData, getLotData, getSalesHistoryData, getTaxData, getUtilityData, getFloodStormData, getPersonData, getCompanyData, getDeedData,getFileData,getLayoutData, getPropertyImprovementData, getCommunicationData } from "./ipfs";
 
 // Function to get all wallet addresses from environment variables

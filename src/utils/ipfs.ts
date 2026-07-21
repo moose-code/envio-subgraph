@@ -1,4 +1,4 @@
-import { experimental_createEffect, S, type EffectContext } from "envio";
+import { createEffect, S, type EffectContext } from "envio";
 import {
     ipfsMetadataSchema,
     relationshipSchema,
@@ -356,7 +356,7 @@ async function fetchDataWithLimitedRetry<T>(
 }
 
 // Fetch relationship data (from/to structure)
-export const getRelationshipData = experimental_createEffect(
+export const getRelationshipData = createEffect(
     {
         name: "getRelationshipData",
         input: S.string,
@@ -375,7 +375,7 @@ export const getRelationshipData = experimental_createEffect(
 );
 
 // Fetch structure data (roof_date)
-export const getStructureData = experimental_createEffect(
+export const getStructureData = createEffect(
     {
         name: "getStructureData",
         input: S.string,
@@ -441,7 +441,7 @@ export const getStructureData = experimental_createEffect(
 );
 
 // Fetch address data
-export const getAddressData = experimental_createEffect(
+export const getAddressData = createEffect(
     {
         name: "getAddressData",
         input: S.string,
@@ -483,7 +483,7 @@ export const getAddressData = experimental_createEffect(
 );
 
 // Fetch property data (property_type, built years)
-export const getPropertyData = experimental_createEffect(
+export const getPropertyData = createEffect(
     {
         name: "getPropertyData",
         input: S.string,
@@ -516,9 +516,8 @@ export const getPropertyData = experimental_createEffect(
     }
 );
 
-
 // Fetch fact sheet data (ipfs_url and full_generation_command)
-export const getIpfsFactSheetData = experimental_createEffect(
+export const getIpfsFactSheetData = createEffect(
     {
         name: "getIpfsFactSheetData",
         input: S.string,
@@ -539,7 +538,7 @@ export const getIpfsFactSheetData = experimental_createEffect(
     }
 );
 
-export const getIpfsMetadata = experimental_createEffect(
+export const getIpfsMetadata = createEffect(
     {
         name: "getIpfsMetadata",
         input: S.string,
@@ -551,8 +550,7 @@ export const getIpfsMetadata = experimental_createEffect(
     }
 );
 
-
-export const getLotData = experimental_createEffect(
+export const getLotData = createEffect(
     {
         name: "getLotData",
         input: S.string,
@@ -585,7 +583,7 @@ export const getLotData = experimental_createEffect(
     }
 );
 
-export const getSalesHistoryData = experimental_createEffect(
+export const getSalesHistoryData = createEffect(
     {
         name: "getSalesHistoryData",
         input: S.string,
@@ -608,7 +606,7 @@ export const getSalesHistoryData = experimental_createEffect(
     }
 );
 
-export const getTaxData = experimental_createEffect(
+export const getTaxData = createEffect(
     {
         name: "getTaxData",
         input: S.string,
@@ -640,7 +638,7 @@ export const getTaxData = experimental_createEffect(
     }
 );
 
-export const getUtilityData = experimental_createEffect(
+export const getUtilityData = createEffect(
     {
         name: "getUtilityData",
         input: S.string,
@@ -679,7 +677,7 @@ export const getUtilityData = experimental_createEffect(
     }
 );
 
-export const getFloodStormData = experimental_createEffect(
+export const getFloodStormData = createEffect(
     {
         name: "getFloodStormData",
         input: S.string,
@@ -707,7 +705,7 @@ export const getFloodStormData = experimental_createEffect(
     }
 );
 
-export const getPersonData = experimental_createEffect(
+export const getPersonData = createEffect(
     {
         name: "getPersonData",
         input: S.string,
@@ -735,7 +733,7 @@ export const getPersonData = experimental_createEffect(
     }
 );
 
-export const getCompanyData = experimental_createEffect(
+export const getCompanyData = createEffect(
     {
         name: "getCompanyData",
         input: S.string,
@@ -763,7 +761,7 @@ export const getCompanyData = experimental_createEffect(
 );
 
 // Fetch communication data
-export const getCommunicationData = experimental_createEffect(
+export const getCommunicationData = createEffect(
     {
         name: "getCommunicationData",
         input: S.string,
@@ -784,7 +782,7 @@ export const getCommunicationData = experimental_createEffect(
     }
 );
 
-export const getLayoutData = experimental_createEffect(
+export const getLayoutData = createEffect(
     {
         name: "getLayoutData",
         input: S.string,
@@ -836,7 +834,7 @@ export const getLayoutData = experimental_createEffect(
     }
 );
 
-export const getFileData = experimental_createEffect(
+export const getFileData = createEffect(
     {
         name: "getFileData",
         input: S.string,
@@ -861,7 +859,7 @@ export const getFileData = experimental_createEffect(
     }
 );
 
-export const getDeedData = experimental_createEffect(
+export const getDeedData = createEffect(
     {
         name: "getDeedData",
         input: S.string,
@@ -882,7 +880,7 @@ export const getDeedData = experimental_createEffect(
 );
 
 // Fetch property improvement data
-export const getPropertyImprovementData = experimental_createEffect(
+export const getPropertyImprovementData = createEffect(
     {
         name: "getPropertyImprovementData",
         input: S.string,

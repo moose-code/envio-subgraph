@@ -1,5 +1,5 @@
 import assert from "assert";
-import { TestHelpers, ERC1967Proxy_DataSubmitted } from "generated";
+import { TestHelpers, ERC1967Proxy_DataSubmitted } from "envio";
 const { MockDb, ERC1967Proxy } = TestHelpers;
 
 describe("ERC1967Proxy contract DataSubmitted event tests", () => {

@@ -1,16 +1,7 @@
 /*
  * Please refer to https://docs.envio.dev for a thorough guide on all Envio indexer features
  */
-import {
-  ERC1967Proxy,
-  ERC1967Proxy_DataGroupHeartBeat,
-  ERC1967Proxy_DataSubmitted,
-  DataSubmittedWithLabel,
-  Structure,
-  Address,
-  Property,
-  Ipfs,
-} from "generated";
+import { indexer, ERC1967Proxy, ERC1967Proxy_DataGroupHeartBeat, ERC1967Proxy_DataSubmitted, DataSubmittedWithLabel, Property } from "envio";
 
 import { bytes32ToCID, getIpfsMetadata, getPropertyData } from "./utils/ipfs";
 import { getAllowedSubmitters, processCountyData, processPropertyImprovementData } from "./utils/eventHelpers";
@@ -18,7 +9,9 @@ import { getAllowedSubmitters, processCountyData, processPropertyImprovementData
 // Get allowed submitters from environment variables - this will crash if none found
 const allowedSubmitters = getAllowedSubmitters();
 
-ERC1967Proxy.DataGroupHeartBeat.handler(async ({ event, context }) => {
+indexer.onEvent(
+  { contract: "ERC1967Proxy", event: "DataGroupHeartBeat" },
+  async ({ event, context }) => {
   if (!allowedSubmitters.includes(event.params.submitter)) {
     // Skipping HeartBeat event - only processing events from specific submitters
     return;
@@ -119,9 +112,12 @@ ERC1967Proxy.DataGroupHeartBeat.handler(async ({ event, context }) => {
       error: (error as Error).message
     });
   }
-});
+}
+);
 
-ERC1967Proxy.DataSubmitted.handler(async ({ event, context }) => {
+indexer.onEvent(
+  { contract: "ERC1967Proxy", event: "DataSubmitted" },
+  async ({ event, context }) => {
   if (!allowedSubmitters.includes(event.params.submitter)) {
     // Skipping DataSubmitted event - only processing events from specific submitters
     return;
@@ -360,4 +356,5 @@ ERC1967Proxy.DataSubmitted.handler(async ({ event, context }) => {
       error: (error as Error).message
     });
   }
-});
+}
+);
